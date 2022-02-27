@@ -1,32 +1,32 @@
 pipeline {
-    agent {
-            label 'Build-server-1'
+    
+agent { node { label 'Lab-Agent-Node' } } 
+tools {
+        maven 'maven3.6.3' 
+        jdk 'java11'
     }
-    tools{
-        maven 'mymaven'
-        jdk 'java'
-    }
-    stages {
-        stage('validate') {
+stages {
+   stage('Code Validate') {
             steps {
                 sh 'mvn validate'
             }
         }
-        stage('compile') {
+    stage('Code Compile') {
             steps {
                 sh 'mvn compile'
             }
         }
-        stage('test') {
+    stage('Code Test') {
             steps {
-                sh 'mvn test'
+               sh 'mvn test'
             }
         }
-         stage('package') {
+    stage('Package') {
             steps {
-                sh 'mvn package'
+               sh 'mvn package'
             }
         }
 
-    }
+}
+
 }
