@@ -33,7 +33,7 @@ post {
             junit 'target/surefire-reports/**/*.xml'
         }
 }
-
+This is the new test on local
 
 
 }
