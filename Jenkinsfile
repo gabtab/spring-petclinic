@@ -30,6 +30,6 @@ pipeline {
       success{
           junit 'target/surefire-reports/*.xml'
       }
-
+--test
     }
     }
