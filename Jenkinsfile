@@ -1,8 +1,8 @@
 pipeline {
     agent { node { label 'master' } } 
     tools {
-        maven 'maven3'
-        jdk 'jdk8' 
+        maven 'maven3.6.3'
+        jdk 'jdk11' 
     }
     stages {
         stage('Code Validate') {
@@ -26,10 +26,5 @@ pipeline {
             }
         }
     }
-    post { --test
-      success{
-          junit 'target/surefire-reports/*.xml'
-      }
-
-    }
+  
     }
