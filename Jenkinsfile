@@ -26,7 +26,7 @@ pipeline {
             }
         }
     }
-    post {
+    post { --test
       success{
           junit 'target/surefire-reports/*.xml'
       }
